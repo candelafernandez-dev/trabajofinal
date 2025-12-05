@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Juzgados - Estudio MyC</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <!-- Link al Dashboard Principal -->
+            <a class="navbar-brand" href="../index.html">Estudio MyC</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="clientes.html">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="expedientes.html">Expedientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="juzgados.html">Juzgados</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>Gestión de Juzgados</h1>
+            <button id="btnNuevoJuzgado" class="btn btn-primary">
+                Nuevo Juzgado
+            </button>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nro. Juzgado</th>
+                        <th>Nombre</th>
+                        <th>Juez de Trámite</th>
+                        <th>Secretario</th>
+                        <th>Teléfono</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaJuzgadosBody">
+                    <!-- Filas dinámicas -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal para Alta/Modificación de Juzgados -->
+    <div class="modal fade" id="modalJuzgado" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalJuzgadoLabel">Datos del Juzgado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formJuzgado">
+                        <input type="hidden" id="juzgadoId" name="id">
+
+                        <div class="mb-3">
+                            <label for="nroJuzgado" class="form-label">Nro. Juzgado</label>
+                            <input type="text" class="form-control" id="nroJuzgado" name="nroJuzgado" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombreJuzgado" class="form-label">Nombre del Juzgado</label>
+                            <input type="text" class="form-control" id="nombreJuzgado" name="nombreJuzgado" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="juezTram" class="form-label">Juez de Trámite</label>
+                            <input type="text" class="form-control" id="juezTram" name="juezTram">
+                        </div>
+                        <div class="mb-3">
+                            <label for="secretario" class="form-label">Secretario</label>
+                            <input type="text" class="form-control" id="secretario" name="secretario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" id="telefono" name="telefono">
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../controladores/auth-guard.js"></script>
+    <script src="../controladores/gestion-juzgados.js" type="module"></script>
+</body>
+</html>

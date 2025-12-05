@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión Jurídica - Estudio MyC</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="estilos.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .card-dashboard {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none; border-radius: 15px; cursor: pointer; text-decoration: none; color: inherit; display: block;
+        }
+        .card-dashboard:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 51, 102, 0.2); background-color: #fdfdfd; }
+        .card-icon { font-size: 3rem; color: var(--color-primario); margin-bottom: 1rem; }
+        .hero-section { background-color: var(--color-primario-oscuro); color: white; padding: 3rem 0; margin-bottom: 2rem; border-radius: 0 0 20px 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero-section text-center pt-5 pb-5">
+        <div class="container">
+            <h1 class="display-4 text-white border-0">Sistema de Gestión Jurídica</h1>
+            <p class="lead">Estudio MyC - Administración Integral</p>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="container mb-5">
+        <div class="row justify-content-center g-4">
+            
+            <!-- Clientes -->
+            <div class="col-md-3">
+                <a href="vistas/clientes.html" class="card h-100 card-dashboard text-center p-4 shadow-sm">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-users"></i></div>
+                        <h3 class="card-title">Clientes</h3>
+                        <p class="card-text text-muted small">Gestión de la base de datos de clientes.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Expedientes -->
+            <div class="col-md-3">
+                <a href="vistas/expedientes.html" class="card h-100 card-dashboard text-center p-4 shadow-sm"> 
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-folder-open"></i></div>
+                        <h3 class="card-title">Expedientes</h3>
+                        <p class="card-text text-muted small">Gestión de causas y estados procesales.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Juzgados (SOLO ADMIN) -->
+            <div class="col-md-3 solo-admin">
+                <a href="vistas/juzgados.html" class="card h-100 card-dashboard text-center p-4 shadow-sm">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-gavel"></i></div>
+                        <h3 class="card-title">Juzgados</h3>
+                        <p class="card-text text-muted small">Directorio de juzgados y jueces.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Usuarios (SOLO ADMIN) -->
+            <div class="col-md-3 solo-admin">
+                <a href="vistas/usuarios.html" class="card h-100 card-dashboard text-center p-4 shadow-sm border-warning">
+                    <div class="card-body">
+                        <div class="card-icon text-warning"><i class="fas fa-user-shield"></i></div>
+                        <h3 class="card-title">Usuarios</h3>
+                        <p class="card-text text-muted small">Crear cuentas para abogados y personal.</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Barra de Usuario (Se llenará dinámicamente) -->
+    <div id="user-bar" class="container text-end mb-3 border-top pt-3">
+        <!-- Aquí el JS pondrá el nombre y el botón salir -->
+    </div>
+
+    <footer class="text-center py-4 text-muted bg-light mt-auto">
+        <small>&copy; 2025 Estudio Jurídico MyC.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="controladores/auth-guard.js"></script>
+</body>
+</html>
