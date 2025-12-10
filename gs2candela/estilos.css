@@ -9,7 +9,7 @@
     --color-primario-oscuro: #003366; /* Azul oscuro (navegación, cabeceras) */
     --color-fondo: #f8f9fa;            /* Fondo general de la página (gris claro) */
     --color-tarjeta: #ffffff;         /* Fondo de modales, tablas, etc. (blanco) */
-    --color-texto: #212529;           /* Color de texto principal (casi negro) */
+    --color-texto: #212529;           /* Color de texto principal (casi rosa) */
     --color-borde: #dee2e6;           /* Color de bordes y líneas */
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-    color: var(--color-primario-oscuro);
+    color: var(--color-primario-claro);
     font-weight: 600;
 }
 
@@ -44,8 +44,8 @@ h1 {
 }
 
 .btn-primary:hover {
-    background-color: var(--color-primario-oscuro);
-    border-color: var(--color-primario-oscuro);
+    background-color: var(--color-primario-claro);
+    border-color: var(--color-primario-claro);
 }
 
 /* Tablas */
@@ -56,7 +56,7 @@ h1 {
 }
 
 .table-hover tbody tr:hover {
-    background-color: rgba(0, 74, 153, 0.05); /* Sutil hover azul */
+    background-color: rgba(0, 74, 153, 0.05); /* Sutil hover rosa */
 }
 
 /* Modales (Formularios) */
@@ -75,7 +75,7 @@ h1 {
 }
 
 .modal-header .btn-close {
-    filter: invert(1) brightness(2); /* Hace la 'X' de cierre blanca */
+    filter: invert(1) brightness(2); /* Hace la 'X' de cierre negra */
 }
 
 /* Formularios */
@@ -93,7 +93,7 @@ h1 {
 /* Estilos para los botones de acciones en las tablas */
 .btn-accion {
     margin-right: 5px;
-    padding: 0.25rem 0.5rem; /* Botones más pequeños */
+    padding: 0.25rem 0.5rem; /* Botones mas pequeños */
     font-size: 0.875rem;
 }
 
